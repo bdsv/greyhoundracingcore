@@ -118,9 +118,9 @@ sub process_past_races_data {
 	select($h);
 	
 	my %dbdata = (
-		dsn			=> 'dbi:Oracle:database=test;HOST=193.137.232.45;PORT=1521;SID=test',
-		username	=> 'bda_1005140',
-		password	=> 'internet',        
+		dsn			=> 'dbi:Oracle:database=test;HOST=192.168.1.1;PORT=1521;SID=test',
+		username	=> 'dbuser',
+		password	=> 'dbpassword',        
     );
 		
 	my $db = DBIx::Simple->connect( $dbdata{dsn}, $dbdata{username}, $dbdata{password}, { RaiseError => 1, AutoCommit => 0} );
@@ -344,16 +344,10 @@ sub process_future_races_data {
 	$|=1;
 	select($h);
 	
-	#my %dbdata = (
-	#	dsn			=> 'dbi:Oracle:database=test;HOST=192.168.99.102;PORT=1521;SID=xe',
-	#	username	=> 'nelson',
-	#	password	=> 'teste',        
-    #);
-	
 	my %dbdata = (
-		dsn			=> 'dbi:Oracle:database=test;HOST=193.137.232.45;PORT=1521;SID=test',
-		username	=> 'bda_1005140',
-		password	=> 'internet',        
+		dsn			=> 'dbi:Oracle:database=test;HOST=192.168.1.1;PORT=1521;SID=test',
+		username	=> 'dbuser',
+		password	=> 'dbpassword',        
     );
 		
 	my $db = DBIx::Simple->connect( $dbdata{dsn}, $dbdata{username}, $dbdata{password}, { RaiseError => 1, AutoCommit => 0} );
