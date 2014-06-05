@@ -49,10 +49,7 @@ namespace GreyhoundBE.BO
         #region Public Methods
 
         private static byte[] m_btaTripleDESInitVector = { 50, 51, 52, 53, 54, 55, 56, 57 };
-        // 156834191816975439751813176864185748956835101549
-
         private static byte[] m_btaTripleDESKey = { 15, 68, 34, 19, 18, 16, 97, 54, 39, 75, 18, 13, 17, 68, 64, 18, 57, 48, 95, 68, 35, 10, 15, 49 };
-        //private static byte[] m_btaTripleDESKey = { 1, 6, 3, 1, 1, 1, 9, 5, 3, 7, 1, 1, 1, 6, 6, 1, 5, 4, 9, 6, 3, 1, 1, 4 };
 
         private const bool m_bDEBUG = true;
         private static string m_strDebugFileName = System.Environment.GetEnvironmentVariable("Temp") + "\\greyhoundBE.log";
@@ -273,12 +270,12 @@ namespace GreyhoundBE.BO
         {
             try
             {
-                var fromAddress = new MailAddress("greyhounds.racing@gmail.com", "Greyhound Racing");
-                const string fromPassword = "internet2010";
+                var fromAddress = new MailAddress("username@gmail.com", "Greyhound Racing");
+                const string fromPassword = "password";
 
                 const string subject = "Greyhound Racing Registration";
                 string body = "Please click on the link bellow to confirm your registration.\r\n"
-                            + "\r\nhttp://duvallnetwork.no-ip.org/Greyhound/ConfirmRegistration.aspx?user_id="
+                            + "\r\nhttp://greyhounds.org/Greyhound/ConfirmRegistration.aspx?user_id="
                             + reference + "&email=" + user_email + "\r\n";
 
                 SmtpClient smtp = new SmtpClient
@@ -548,7 +545,6 @@ namespace GreyhoundBE.BO
                     }
                     catch (Exception)
                     {
-                        //Tools.printDebug(new System.Diagnostics.StackFrame(), "THIRD FORMAT (" + date + "|" + format + ") Will try fourth format", exception_third_format);
                         try
                         {
                             //Fri Oct 09 16:15:49 2009
