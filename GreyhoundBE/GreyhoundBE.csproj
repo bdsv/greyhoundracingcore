@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{20FD51EB-6440-4601-B647-9B0A6B6644E6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GreyhoundBE</RootNamespace>
+    <AssemblyName>GreyhoundBE</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Oracle.DataAccess, Version=2.112.3.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\ConfigurationBLL.cs" />
+    <Compile Include="BLL\BetsBLL.cs" />
+    <Compile Include="BLL\RaceEventBLL.cs" />
+    <Compile Include="BLL\RaceDetailsBLL.cs" />
+    <Compile Include="BLL\RaceBLL.cs" />
+    <Compile Include="BLL\StadiumBLL.cs" />
+    <Compile Include="BLL\GreyhoundBLL.cs" />
+    <Compile Include="BLL\UserBLL.cs" />
+    <Compile Include="BO\Bet.cs" />
+    <Compile Include="BO\ConnString.cs" />
+    <Compile Include="BO\GeyhoundSession.cs" />
+    <Compile Include="BO\RaceDetail.cs" />
+    <Compile Include="BO\DatabaseSchema.cs" />
+    <Compile Include="BO\Greyhound.cs" />
+    <Compile Include="BO\Race.cs" />
+    <Compile Include="BO\RaceEvent.cs" />
+    <Compile Include="BO\Role.cs" />
+    <Compile Include="BO\Stadium.cs" />
+    <Compile Include="BO\Tools.cs" />
+    <Compile Include="BO\User.cs" />
+    <Compile Include="DAL\BetsDAL.cs" />
+    <Compile Include="DAL\GreyhoundSessionDAL.cs" />
+    <Compile Include="DAL\RaceEventDAL.cs" />
+    <Compile Include="DAL\RaceDetailDAL.cs" />
+    <Compile Include="DAL\RaceDAL.cs" />
+    <Compile Include="DAL\StadiumDAL.cs" />
+    <Compile Include="DAL\GreyhoundDAL.cs" />
+    <Compile Include="DAL\UserDAL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
